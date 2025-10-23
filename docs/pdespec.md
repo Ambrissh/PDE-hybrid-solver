@@ -28,3 +28,8 @@ $$
 
 - **Neural Operator**: $(u_0, \nu) \mapsto u_T$
 - **PINN**: $\mathcal{R}(u) = \frac{\partial u}{\partial t} + u \frac{\partial u}{\partial x} - \nu \frac{\partial^2 u}{\partial x^2}$
+
+$$
+u_0(x) = \sum_{k=1}^{N} A_k \sin(kx + \phi_k)
+$$
+(Sum of Sines with random Amplitudes and phases)
