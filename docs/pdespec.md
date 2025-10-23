@@ -24,12 +24,27 @@ $$
 u_0(x) = \sum_{k=1}^{N} A_k \sin(kx + \phi_k)
 $$
 
+(Sum of sines with random amplitudes and phases)
+
 ## Purpose
 
-- **Neural Operator**: $(u_0, \nu) \mapsto u_T$
-- **PINN**: $\mathcal{R}(u) = \frac{\partial u}{\partial t} + u \frac{\partial u}{\partial x} - \nu \frac{\partial^2 u}{\partial x^2}$
+This PDE defines the physical law our machine learning models learn:
+
+### Neural Operator
+Learns mapping: $(u_0, \nu) \mapsto u_T$
+
+### Physics-Informed Neural Network (PINN)
+Enforces physics via residual:
 
 $$
-u_0(x) = \sum_{k=1}^{N} A_k \sin(kx + \phi_k)
+\mathcal{R}(u) = \frac{\partial u}{\partial t} + u \frac{\partial u}{\partial x} - \nu \frac{\partial^2 u}{\partial x^2}
 $$
-(Sum of Sines with random Amplitudes and phases)
+
+## Mathematical Properties
+
+The Burgers' equation exhibits several important mathematical features:
+
+- **Nonlinear advection**: $u \frac{\partial u}{\partial x}$ term causes wave steepening
+- **Linear diffusion**: $\nu \frac{\partial^2 u}{\partial x^2}$ term provides smoothing
+- **Shock formation**: For small $\nu$, solutions can develop discontinuities
+- **Energy dissipation**: Viscous term causes energy decay over time
